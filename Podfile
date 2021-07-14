@@ -8,6 +8,8 @@ target 'AppStore' do
   # Pods for AppStore
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Alamofire'
+  pod 'RxAlamofire'
 
   target 'AppStoreTests' do
     inherit! :search_paths
