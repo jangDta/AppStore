@@ -10,6 +10,12 @@
 		130624E1269FBA6100C4659C /* LoadImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130624E0269FBA6100C4659C /* LoadImageUseCase.swift */; };
 		130624E7269FBAB500C4659C /* LoadImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130624E6269FBAB500C4659C /* LoadImageRepository.swift */; };
 		130624ED269FBAF200C4659C /* LoadImageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130624EC269FBAF200C4659C /* LoadImageRepositoryImpl.swift */; };
+		130624F926A012C700C4659C /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 130624F726A012C700C4659C /* CoreDataStorage.xcdatamodeld */; };
+		130624FE26A012DF00C4659C /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130624FD26A012DF00C4659C /* CoreDataStorage.swift */; };
+		1306250326A0171900C4659C /* RecentSearchAppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1306250226A0171900C4659C /* RecentSearchAppCache.swift */; };
+		1306250E26A01E0D00C4659C /* RecentSearchAppListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1306250D26A01E0D00C4659C /* RecentSearchAppListUseCase.swift */; };
+		1306251326A01E6700C4659C /* RecentSearchAppListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1306251226A01E6700C4659C /* RecentSearchAppListRepository.swift */; };
+		1306251826A01F5300C4659C /* RecentSearchAppListRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1306251726A01F5300C4659C /* RecentSearchAppListRepositoryImpl.swift */; };
 		1592A5652691A1C300569D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592A5642691A1C300569D69 /* AppDelegate.swift */; };
 		1592A5672691A1C300569D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592A5662691A1C300569D69 /* SceneDelegate.swift */; };
 		1592A56E2691A1C700569D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1592A56D2691A1C700569D69 /* Assets.xcassets */; };
@@ -61,6 +67,12 @@
 		130624E0269FBA6100C4659C /* LoadImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageUseCase.swift; sourceTree = "<group>"; };
 		130624E6269FBAB500C4659C /* LoadImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageRepository.swift; sourceTree = "<group>"; };
 		130624EC269FBAF200C4659C /* LoadImageRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageRepositoryImpl.swift; sourceTree = "<group>"; };
+		130624F826A012C700C4659C /* CoreDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStorage.xcdatamodel; sourceTree = "<group>"; };
+		130624FD26A012DF00C4659C /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		1306250226A0171900C4659C /* RecentSearchAppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchAppCache.swift; sourceTree = "<group>"; };
+		1306250D26A01E0D00C4659C /* RecentSearchAppListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchAppListUseCase.swift; sourceTree = "<group>"; };
+		1306251226A01E6700C4659C /* RecentSearchAppListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchAppListRepository.swift; sourceTree = "<group>"; };
+		1306251726A01F5300C4659C /* RecentSearchAppListRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchAppListRepositoryImpl.swift; sourceTree = "<group>"; };
 		1592A5612691A1C300569D69 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1592A5642691A1C300569D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1592A5662691A1C300569D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,28 +156,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		130624D4269FBA1800C4659C /* LoadImageUseCase */ = {
+		130624F626A0127C00C4659C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				130624E0269FBA6100C4659C /* LoadImageUseCase.swift */,
+				130624FD26A012DF00C4659C /* CoreDataStorage.swift */,
+				130624F726A012C700C4659C /* CoreDataStorage.xcdatamodeld */,
 			);
-			path = LoadImageUseCase;
-			sourceTree = "<group>";
-		};
-		130624E5269FBAA400C4659C /* LoadImage */ = {
-			isa = PBXGroup;
-			children = (
-				130624E6269FBAB500C4659C /* LoadImageRepository.swift */,
-			);
-			path = LoadImage;
-			sourceTree = "<group>";
-		};
-		130624EB269FBAE000C4659C /* LoadImage */ = {
-			isa = PBXGroup;
-			children = (
-				130624EC269FBAF200C4659C /* LoadImageRepositoryImpl.swift */,
-			);
-			path = LoadImage;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		13C7DEFC29D0F6343585EBD3 /* Frameworks */ = {
@@ -271,8 +268,9 @@
 		1592A5A52691ACA800569D69 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				130624D4269FBA1800C4659C /* LoadImageUseCase */,
-				1592A5BA269932BE00569D69 /* AppList */,
+				130624E0269FBA6100C4659C /* LoadImageUseCase.swift */,
+				1592A5C1269933D900569D69 /* SearchAppListUsecase.swift */,
+				1306250D26A01E0D00C4659C /* RecentSearchAppListUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -288,8 +286,9 @@
 		1592A5A72691ACCD00569D69 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				130624E5269FBAA400C4659C /* LoadImage */,
-				1592A5BB269932CE00569D69 /* AppList */,
+				130624E6269FBAB500C4659C /* LoadImageRepository.swift */,
+				1592A5C326993FC900569D69 /* SearchAppListRepository.swift */,
+				1306251226A01E6700C4659C /* RecentSearchAppListRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -308,6 +307,7 @@
 				1592A5A42691AC9E00569D69 /* Entities */,
 				1592A5B12691ADE300569D69 /* Repositories */,
 				1592A5B22691ADEE00569D69 /* DataSource */,
+				130624F626A0127C00C4659C /* CoreData */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -354,8 +354,9 @@
 		1592A5B12691ADE300569D69 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				130624EB269FBAE000C4659C /* LoadImage */,
-				1592A5BC269932E700569D69 /* AppList */,
+				130624EC269FBAF200C4659C /* LoadImageRepositoryImpl.swift */,
+				1592A5C5269940C200569D69 /* SearchAppListRepositoryImpl.swift */,
+				1306251726A01F5300C4659C /* RecentSearchAppListRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -379,34 +380,11 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		1592A5BA269932BE00569D69 /* AppList */ = {
-			isa = PBXGroup;
-			children = (
-				1592A5C1269933D900569D69 /* SearchAppListUsecase.swift */,
-			);
-			path = AppList;
-			sourceTree = "<group>";
-		};
-		1592A5BB269932CE00569D69 /* AppList */ = {
-			isa = PBXGroup;
-			children = (
-				1592A5C326993FC900569D69 /* SearchAppListRepository.swift */,
-			);
-			path = AppList;
-			sourceTree = "<group>";
-		};
-		1592A5BC269932E700569D69 /* AppList */ = {
-			isa = PBXGroup;
-			children = (
-				1592A5C5269940C200569D69 /* SearchAppListRepositoryImpl.swift */,
-			);
-			path = AppList;
-			sourceTree = "<group>";
-		};
 		1592A5BD269932FD00569D69 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
 				1592A5D926995D4B00569D69 /* ImageCache.swift */,
+				1306250226A0171900C4659C /* RecentSearchAppCache.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -693,9 +671,11 @@
 				1592A5AE2691ADA900569D69 /* AppListCoordinator.swift in Sources */,
 				1592A5C2269933D900569D69 /* SearchAppListUsecase.swift in Sources */,
 				1592A5C426993FC900569D69 /* SearchAppListRepository.swift in Sources */,
+				1306251826A01F5300C4659C /* RecentSearchAppListRepositoryImpl.swift in Sources */,
 				1592A5DE26995E6F00569D69 /* AppModel.swift in Sources */,
 				1592A59D2691A92100569D69 /* Coordinator.swift in Sources */,
 				1592A5DC26995DDA00569D69 /* ArtworkService.swift in Sources */,
+				1306250326A0171900C4659C /* RecentSearchAppCache.swift in Sources */,
 				1592A5652691A1C300569D69 /* AppDelegate.swift in Sources */,
 				130624E7269FBAB500C4659C /* LoadImageRepository.swift in Sources */,
 				1592A5D22699478900569D69 /* AppViewModel.swift in Sources */,
@@ -704,14 +684,18 @@
 				1592A5CB269943A000569D69 /* AppListViewModel.swift in Sources */,
 				1592A5B72691B10200569D69 /* App.swift in Sources */,
 				1592A5672691A1C300569D69 /* SceneDelegate.swift in Sources */,
+				1306250E26A01E0D00C4659C /* RecentSearchAppListUseCase.swift in Sources */,
 				1592A5C6269940C200569D69 /* SearchAppListRepositoryImpl.swift in Sources */,
 				1592A5B92691B1BE00569D69 /* AppListViewController.swift in Sources */,
+				130624FE26A012DF00C4659C /* CoreDataStorage.swift in Sources */,
 				1592A5DA26995D4B00569D69 /* ImageCache.swift in Sources */,
+				130624F926A012C700C4659C /* CoreDataStorage.xcdatamodeld in Sources */,
 				1592A5A12691A9DD00569D69 /* CompositionRoot.swift in Sources */,
 				1592A5D826994FF600569D69 /* SearchAppService.swift in Sources */,
 				1592A5D02699474300569D69 /* Observable+Extension.swift in Sources */,
 				1592A5D526994D2400569D69 /* AppCollectionViewCell.swift in Sources */,
 				1592A5CD2699445600569D69 /* ViewModelType.swift in Sources */,
+				1306251326A01E6700C4659C /* RecentSearchAppListRepository.swift in Sources */,
 				130624E1269FBA6100C4659C /* LoadImageUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1043,6 +1027,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		130624F726A012C700C4659C /* CoreDataStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				130624F826A012C700C4659C /* CoreDataStorage.xcdatamodel */,
+			);
+			currentVersion = 130624F826A012C700C4659C /* CoreDataStorage.xcdatamodel */;
+			path = CoreDataStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1592A5592691A1C300569D69 /* Project object */;
 }
