@@ -15,11 +15,13 @@ final class AppListViewModel: ViewModelType {
         let title: Driver<Void>
         let searchAppText: Driver<String>
         let searchAppTrigger: Driver<Void>
+        let clickAppTrigger: Driver<AppViewModel>
     }
     
     struct Output {
         let title: Driver<String>
         let fetchAppList: Driver<[AppViewModel]>
+        let fetchAppDetail: Driver<AppViewModel>
     }
     
     private let useCase: SearchAppListUseCaseProtocol
@@ -40,7 +42,11 @@ final class AppListViewModel: ViewModelType {
                         $0.map { AppViewModel(model: $0, useCase: LoadImageUseCase(repository: LoadImageRepositoryImpl(service: ArtworkService()))) }
                     }
             }
+        
+        let fetchAppDetail = input.clickAppTrigger
+        
         return Output(title: title,
-                      fetchAppList: fetchAppList)
+                      fetchAppList: fetchAppList,
+                      fetchAppDetail: fetchAppDetail)
     }
 }

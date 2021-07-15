@@ -66,6 +66,8 @@ class AppListViewController: UIViewController {
                                             .distinctUntilChanged()
                                             .asDriverOnErrorJustComplete(),
                                            searchAppTrigger: searchBar.rx.searchButtonClicked
+                                            .asDriverOnErrorJustComplete(),
+                                           clickAppTrigger: collectionView.rx.modelSelected(AppViewModel.self)
                                             .asDriverOnErrorJustComplete())
         
         let output = viewModel.transform(input: input)
@@ -79,6 +81,8 @@ class AppListViewController: UIViewController {
                 cell.bind(viewModel: viewModel)
             }
             .disposed(by: disposeBag)
+        
+        output.fetchAppDetail.asObservable().subscribe(onNext: { print($0) }).disposed(by: disposeBag)
     }
     
     private func configureCollectionView() {
