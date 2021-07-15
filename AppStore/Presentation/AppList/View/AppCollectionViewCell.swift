@@ -49,31 +49,5 @@ class AppCollectionViewCell: UICollectionViewCell {
             .drive(appImageView.rx.image)
             .disposed(by: disposeBag)
     }
-    
-    func subscribe() {
-//        // ViewModel
-//        viewModel.subscribe(onNext: { appViewModel in
-//            self.appTitleLabel.text = appViewModel.appModel.trackName
-//            self.appSubtitleLabel.text = appViewModel.appModel.artistName
-//
-//            guard let artworkUrlString = appViewModel.appModel.artwork else { return }
-//
-//            if let cachedImage = ImageCache.shared.object(forKey: NSString(string: artworkUrlString)) {
-//                self.artworkImage.accept(cachedImage)
-//            } else {
-//                appViewModel.fetchArtworkImage(artworkUrlString).subscribe(onNext: { image in
-//                    ImageCache.shared.setObject(image, forKey: NSString(string: artworkUrlString))
-//                    self.artworkImage.accept(image)
-//                })
-//                .disposed(by: self.disposeBag)
-//            }
-//        })
-//        .disposed(by: disposeBag)
-//
-//        // AppImage
-//        artworkImage.asDriver()
-//            .drive(appImageView.rx.image)
-//            .disposed(by: disposeBag)
-    }
 
 }
