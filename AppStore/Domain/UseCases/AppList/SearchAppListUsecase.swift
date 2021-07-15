@@ -8,7 +8,11 @@
 import Foundation
 import RxSwift
 
-class SearchAppListUseCase {
+protocol SearchAppListUseCaseProtocol {
+    func search(text: String) -> Observable<[AppModel]>
+}
+
+class SearchAppListUseCase: SearchAppListUseCaseProtocol {
     private let repository: SearchAppListRepository
     
     init(repository: SearchAppListRepository) {
@@ -17,5 +21,6 @@ class SearchAppListUseCase {
     
     func search(text: String) -> Observable<[AppModel]> {
         self.repository.search(text: text)
+            .observe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
     }
 }

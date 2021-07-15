@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130624E1269FBA6100C4659C /* LoadImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130624E0269FBA6100C4659C /* LoadImageUseCase.swift */; };
+		130624E7269FBAB500C4659C /* LoadImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130624E6269FBAB500C4659C /* LoadImageRepository.swift */; };
+		130624ED269FBAF200C4659C /* LoadImageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130624EC269FBAF200C4659C /* LoadImageRepositoryImpl.swift */; };
 		1592A5652691A1C300569D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592A5642691A1C300569D69 /* AppDelegate.swift */; };
 		1592A5672691A1C300569D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592A5662691A1C300569D69 /* SceneDelegate.swift */; };
 		1592A56E2691A1C700569D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1592A56D2691A1C700569D69 /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130624E0269FBA6100C4659C /* LoadImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageUseCase.swift; sourceTree = "<group>"; };
+		130624E6269FBAB500C4659C /* LoadImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageRepository.swift; sourceTree = "<group>"; };
+		130624EC269FBAF200C4659C /* LoadImageRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageRepositoryImpl.swift; sourceTree = "<group>"; };
 		1592A5612691A1C300569D69 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1592A5642691A1C300569D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1592A5662691A1C300569D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +142,30 @@
 				4EC74A85AB6E73FB156B8BD1 /* Pods-AppStoreTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		130624D4269FBA1800C4659C /* LoadImageUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				130624E0269FBA6100C4659C /* LoadImageUseCase.swift */,
+			);
+			path = LoadImageUseCase;
+			sourceTree = "<group>";
+		};
+		130624E5269FBAA400C4659C /* LoadImage */ = {
+			isa = PBXGroup;
+			children = (
+				130624E6269FBAB500C4659C /* LoadImageRepository.swift */,
+			);
+			path = LoadImage;
+			sourceTree = "<group>";
+		};
+		130624EB269FBAE000C4659C /* LoadImage */ = {
+			isa = PBXGroup;
+			children = (
+				130624EC269FBAF200C4659C /* LoadImageRepositoryImpl.swift */,
+			);
+			path = LoadImage;
 			sourceTree = "<group>";
 		};
 		13C7DEFC29D0F6343585EBD3 /* Frameworks */ = {
@@ -241,6 +271,7 @@
 		1592A5A52691ACA800569D69 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				130624D4269FBA1800C4659C /* LoadImageUseCase */,
 				1592A5BA269932BE00569D69 /* AppList */,
 			);
 			path = UseCases;
@@ -257,6 +288,7 @@
 		1592A5A72691ACCD00569D69 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				130624E5269FBAA400C4659C /* LoadImage */,
 				1592A5BB269932CE00569D69 /* AppList */,
 			);
 			path = Repositories;
@@ -322,6 +354,7 @@
 		1592A5B12691ADE300569D69 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				130624EB269FBAE000C4659C /* LoadImage */,
 				1592A5BC269932E700569D69 /* AppList */,
 			);
 			path = Repositories;
@@ -664,8 +697,10 @@
 				1592A59D2691A92100569D69 /* Coordinator.swift in Sources */,
 				1592A5DC26995DDA00569D69 /* ArtworkService.swift in Sources */,
 				1592A5652691A1C300569D69 /* AppDelegate.swift in Sources */,
+				130624E7269FBAB500C4659C /* LoadImageRepository.swift in Sources */,
 				1592A5D22699478900569D69 /* AppViewModel.swift in Sources */,
 				1592A5C9269942E000569D69 /* Network.swift in Sources */,
+				130624ED269FBAF200C4659C /* LoadImageRepositoryImpl.swift in Sources */,
 				1592A5CB269943A000569D69 /* AppListViewModel.swift in Sources */,
 				1592A5B72691B10200569D69 /* App.swift in Sources */,
 				1592A5672691A1C300569D69 /* SceneDelegate.swift in Sources */,
@@ -677,6 +712,7 @@
 				1592A5D02699474300569D69 /* Observable+Extension.swift in Sources */,
 				1592A5D526994D2400569D69 /* AppCollectionViewCell.swift in Sources */,
 				1592A5CD2699445600569D69 /* ViewModelType.swift in Sources */,
+				130624E1269FBA6100C4659C /* LoadImageUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,7 +810,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -829,7 +865,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

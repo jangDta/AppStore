@@ -16,13 +16,11 @@ class AppCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var appSubtitleLabel: UILabel!
     
     let disposeBag = DisposeBag()
-    var viewModel = PublishSubject<AppViewModel>()
     let artworkImage = BehaviorRelay<UIImage>(value: UIImage())
     
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
-        subscribe()
     }
     
     override func prepareForReuse() {
@@ -34,30 +32,48 @@ class AppCollectionViewCell: UICollectionViewCell {
         appImageView.layer.cornerRadius = 10
     }
     
-    func subscribe() {
-        // ViewModel
-        viewModel.subscribe(onNext: { appViewModel in
-            self.appTitleLabel.text = appViewModel.appModel.trackName
-            self.appSubtitleLabel.text = appViewModel.appModel.artistName
-            
-            guard let artworkUrlString = appViewModel.appModel.artwork else { return }
-            
-            if let cachedImage = ImageCache.shared.object(forKey: NSString(string: artworkUrlString)) {
-                self.artworkImage.accept(cachedImage)
-            } else {
-                appViewModel.fetchArtworkImage(artworkUrlString).subscribe(onNext: { image in
-                    ImageCache.shared.setObject(image, forKey: NSString(string: artworkUrlString))
-                    self.artworkImage.accept(image)
-                })
-                .disposed(by: self.disposeBag)
-            }
-        })
-        .disposed(by: disposeBag)
+    func bind(viewModel: AppViewModel) {
+        let input = AppViewModel.Input()
         
-        // AppImage
-        artworkImage.asDriver()
+        let output = viewModel.transform(input: input)
+        
+        output.title
+            .drive(appTitleLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.subtitle
+            .drive(appSubtitleLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.artworkImage
             .drive(appImageView.rx.image)
             .disposed(by: disposeBag)
+    }
+    
+    func subscribe() {
+//        // ViewModel
+//        viewModel.subscribe(onNext: { appViewModel in
+//            self.appTitleLabel.text = appViewModel.appModel.trackName
+//            self.appSubtitleLabel.text = appViewModel.appModel.artistName
+//
+//            guard let artworkUrlString = appViewModel.appModel.artwork else { return }
+//
+//            if let cachedImage = ImageCache.shared.object(forKey: NSString(string: artworkUrlString)) {
+//                self.artworkImage.accept(cachedImage)
+//            } else {
+//                appViewModel.fetchArtworkImage(artworkUrlString).subscribe(onNext: { image in
+//                    ImageCache.shared.setObject(image, forKey: NSString(string: artworkUrlString))
+//                    self.artworkImage.accept(image)
+//                })
+//                .disposed(by: self.disposeBag)
+//            }
+//        })
+//        .disposed(by: disposeBag)
+//
+//        // AppImage
+//        artworkImage.asDriver()
+//            .drive(appImageView.rx.image)
+//            .disposed(by: disposeBag)
     }
 
 }

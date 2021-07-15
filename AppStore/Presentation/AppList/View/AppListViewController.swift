@@ -16,6 +16,7 @@ class AppListViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     let viewModel: AppListViewModel
+    private var searchText = PublishSubject<String>()
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -53,15 +54,21 @@ class AppListViewController: UIViewController {
     }
     
     private func bind() {
+        guard let searchBar = self.navigationItem.searchController?.searchBar else { return }
         let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
             .mapToVoid()
             .asDriverOnErrorJustComplete()
         
-        let input = AppListViewModel.Input(title: Driver.merge(viewWillAppear), searchAppTrigger: Driver.just("Happy"))
+        let input = AppListViewModel.Input(title: Driver.merge(viewWillAppear),
+                                           searchAppText: searchBar.rx.text
+                                            .orEmpty
+                                            .filter { !$0.isEmpty }
+                                            .distinctUntilChanged()
+                                            .asDriverOnErrorJustComplete(),
+                                           searchAppTrigger: searchBar.rx.searchButtonClicked
+                                            .asDriverOnErrorJustComplete())
         
         let output = viewModel.transform(input: input)
-        
-        print(output)
         
         output.title
             .drive(self.navigationItem.rx.title)
@@ -69,7 +76,7 @@ class AppListViewController: UIViewController {
         
         output.fetchAppList
             .drive(self.collectionView.rx.items(cellIdentifier: "AppCollectionViewCell", cellType: AppCollectionViewCell.self)) { collectionView, viewModel, cell in
-                cell.viewModel.onNext(viewModel)
+                cell.bind(viewModel: viewModel)
             }
             .disposed(by: disposeBag)
     }
@@ -92,7 +99,6 @@ class AppListViewController: UIViewController {
         searchController.searchBar.placeholder = "Search Itune"
         searchController.hidesNavigationBarDuringPresentation = false
         
-
         self.navigationItem.searchController = searchController
     }
 }

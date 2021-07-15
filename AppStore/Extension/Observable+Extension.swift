@@ -41,3 +41,11 @@ extension ObservableType {
         return map { _ in }
     }
 }
+
+extension Observable {
+    func unwrap<T>() -> Observable<T> where Element == T? {
+            self
+                .filter { $0 != nil }
+                .map { $0! }
+        }
+}
