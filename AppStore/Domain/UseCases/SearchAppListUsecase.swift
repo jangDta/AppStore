@@ -21,6 +21,6 @@ class SearchAppListUseCase: SearchAppListUseCaseProtocol {
     
     func search(text: String) -> Observable<[AppModel]> {
         self.repository.search(text: text)
-            .observe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
     }
 }

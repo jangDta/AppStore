@@ -11,7 +11,7 @@ final class AppListCoordinator: Coordinator {
     var navigationController: UINavigationController?
     
     func start() {
-        let rootViewController = AppListViewController(viewModel: AppListViewModel(useCase: SearchAppListUseCase(repository: SearchAppListRepositoryImpl(service: SearchAppService()))))
+        let rootViewController = AppListViewController(viewModel: AppListViewModel(useCase: SearchAppListUseCase(repository: SearchAppListRepositoryImpl(service: SearchAppService(), cache: RecentSearchAppCache()))))
         navigationController?.setViewControllers([rootViewController], animated: false)
     }
 }

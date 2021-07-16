@@ -21,6 +21,6 @@ class LoadImageUseCase: LoadImageUseCaseProtocol {
     
     func load(imageUrl: String) -> Observable<UIImage> {
         self.repository.load(imageUrl: imageUrl)
-            .observe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
     }
 }
