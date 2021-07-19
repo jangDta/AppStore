@@ -37,6 +37,7 @@ struct App: Codable {
     let isStreamable: Bool?
     let collectionArtistViewURL: String?
     let contentAdvisoryRating: String?
+    let screenshotUrls: [String]?
 
     enum CodingKeys: String, CodingKey {
         case wrapperType, kind
@@ -53,11 +54,15 @@ struct App: Codable {
         case artworkUrl30, artworkUrl60, artworkUrl100, releaseDate, collectionExplicitness, trackExplicitness, discCount, discNumber, trackCount, trackNumber, trackTimeMillis, country, currency, primaryGenreName, isStreamable
         case collectionArtistViewURL = "collectionArtistViewUrl"
         case contentAdvisoryRating
+        case screenshotUrls
     }
 }
 
 extension App {
     func toModel() -> AppModel {
-        AppModel(artistName: self.artistName, trackName: self.trackName, artwork: self.artworkUrl100)
+        AppModel(artistName: self.artistName,
+                 trackName: self.trackName,
+                 artwork: self.artworkUrl100,
+                 screenshotUrls: self.screenshotUrls)
     }
 }

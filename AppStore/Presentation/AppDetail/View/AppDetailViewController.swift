@@ -9,6 +9,8 @@ import UIKit
 
 class AppDetailViewController: UIViewController {
 
+    weak var coordinator: AppDetailCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -13,7 +13,7 @@ import RxRelay
 class AppListViewController: UIViewController {
     
     // MARK: - Properties
-    
+    weak var coordinator: AppListCoordinator?
     let disposeBag = DisposeBag()
     let viewModel: AppListViewModel
     private var searchText = PublishSubject<String>()
@@ -77,12 +77,15 @@ class AppListViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.fetchAppList
+            .map {
+                $0.map { AppViewModel(model: $0, useCase: LoadImageUseCase(repository: LoadImageRepositoryImpl(service: ArtworkService())))}
+            }
             .drive(self.collectionView.rx.items(cellIdentifier: "AppCollectionViewCell", cellType: AppCollectionViewCell.self)) { collectionView, viewModel, cell in
                 cell.bind(viewModel: viewModel)
             }
             .disposed(by: disposeBag)
         
-        output.fetchAppDetail.asObservable().subscribe(onNext: { print($0) }).disposed(by: disposeBag)
+        output.fetchAppDetail.subscribe(onNext: { print($0) }).disposed(by: disposeBag)
         
         // 최근 검색어 불러오나
         let usecase = RecentSearchAppListUseCase(repository: RecentSearchAppListRepositoryImpl(cache: RecentSearchAppCache()))

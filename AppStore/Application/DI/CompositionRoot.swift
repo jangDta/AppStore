@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct AppDependency {
-    let appListCoordinator: AppListCoordinator
-}
-
-extension AppDependency {
-    static func resolve() -> AppDependency {
-        let appListCoordinator = AppListCoordinator()
-        return AppDependency(appListCoordinator: appListCoordinator)
-    }
-}
+//struct AppDependency {
+//    let appListCoordinator: AppListCoordinator
+//}
+//
+//extension AppDependency {
+//    static func resolve() -> AppDependency {
+//        let appListCoordinator = AppListCoordinator()
+//        return AppDependency(appListCoordinator: appListCoordinator)
+//    }
+//}

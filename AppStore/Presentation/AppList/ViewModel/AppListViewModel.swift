@@ -20,8 +20,8 @@ final class AppListViewModel: ViewModelType {
     
     struct Output {
         let title: Driver<String>
-        let fetchAppList: Driver<[AppViewModel]>
-        let fetchAppDetail: Driver<AppViewModel>
+        let fetchAppList: Driver<[AppModel]>
+        let fetchAppDetail: Observable<AppModel>
     }
     
     private let useCase: SearchAppListUseCaseProtocol
@@ -38,12 +38,13 @@ final class AppListViewModel: ViewModelType {
             .flatMapLatest {
                 return self.useCase.search(text: $0)
                     .asDriverOnErrorJustComplete()
-                    .map {
-                        $0.map { AppViewModel(model: $0, useCase: LoadImageUseCase(repository: LoadImageRepositoryImpl(service: ArtworkService()))) }
-                    }
             }
         
         let fetchAppDetail = input.clickAppTrigger
+            .asObservable()
+            .map {
+                $0.model
+            }
         
         return Output(title: title,
                       fetchAppList: fetchAppList,

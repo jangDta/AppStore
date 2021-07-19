@@ -11,4 +11,5 @@ struct AppModel {
     let artistName: String?
     let trackName: String?
     let artwork: String?
+    let screenshotUrls: [String]?
 }
