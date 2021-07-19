@@ -6,3 +6,24 @@
 //
 
 import Foundation
+
+class AppDetailViewModel: ViewModelType {
+    struct Input {
+        
+    }
+    
+    struct Output {
+        
+    }
+    
+    let model: AppModel
+    
+    init(model: AppModel) {
+        self.model = model
+    }
+    
+    func transform(input: Input) -> Output {
+        return Output()
+    }
+    
+}

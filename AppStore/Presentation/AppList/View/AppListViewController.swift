@@ -85,7 +85,10 @@ class AppListViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        output.fetchAppDetail.subscribe(onNext: { print($0) }).disposed(by: disposeBag)
+        output.fetchAppDetail.subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+            self.coordinator?.performTransition(to: .detail(model: $0))
+        }).disposed(by: disposeBag)
         
         // 최근 검색어 불러오나
         let usecase = RecentSearchAppListUseCase(repository: RecentSearchAppListRepositoryImpl(cache: RecentSearchAppCache()))

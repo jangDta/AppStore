@@ -14,7 +14,11 @@ final class AppDetailCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let vc = AppDetailViewController(nibName: "AppDetailViewController", bundle: nil)
+        fatalError("Start method must be implemented")
+    }
+    
+    func showDetail(model: AppModel) {
+        let vc = AppDetailViewController(viewModel: AppDetailViewModel(model: model))
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

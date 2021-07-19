@@ -10,7 +10,7 @@ import UIKit
 final class AppListCoordinator: BaseCoordinator {
     
     enum Transition {
-        case detail
+        case detail(model: AppModel)
     }
 
     override func start() {
@@ -21,10 +21,10 @@ final class AppListCoordinator: BaseCoordinator {
     
     func performTransition(to transition: Transition) {
         switch transition {
-        case .detail:
+        case .detail(let model):
             removeChildCoordinators()
             let coordinator = AppDetailCoordinator(navigationController: navigationController)
-            start(coordinator: coordinator)
+            coordinator.showDetail(model: model)
         }
     }
 }
