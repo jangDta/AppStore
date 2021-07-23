@@ -1,20 +1,15 @@
 //
-//  AppListCoordinator.swift
+//  AppListAssembly.swift
 //  AppStore
 //
-//  Created by 장용범 on 2021/07/04.
+//  Created by a60105114 on 2021/07/23.
 //
 
-import UIKit
+import Foundation
 import Swinject
 
-final class AppListCoordinator: BaseCoordinator {
-    
-    enum Transition {
-        case detail(model: AppModel)
-    }
-    
-    let container = Container() { container in
+final class AppListAssembly: Assembly {
+    func assemble(container: Container) {
         // DataSource
         container.register(SearchAppServiceProtocol.self) { _ in SearchAppService() }
         container.register(RecentSearchAppCachable.self) { _ in RecentSearchAppCache() }
@@ -42,21 +37,6 @@ final class AppListCoordinator: BaseCoordinator {
         container.register(UIViewController.self) { r in
             let viewController = AppListViewController(viewModel: r.resolve(AppListViewModeling.self)!)
             return viewController
-        }
-    }
-
-    override func start() {
-        guard let vc = container.resolve(UIViewController.self) as? AppListViewController else { return }
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func performTransition(to transition: Transition) {
-        switch transition {
-        case .detail(let model):
-            removeChildCoordinators()
-            let coordinator = AppDetailCoordinator(navigationController: navigationController)
-            coordinator.showDetail(model: model)
         }
     }
 }

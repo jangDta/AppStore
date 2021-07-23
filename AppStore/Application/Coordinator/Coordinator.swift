@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Swinject
 
 protocol Coordinator: AnyObject {
     var navigationController: UINavigationController { get set }
@@ -45,12 +46,5 @@ class BaseCoordinator: Coordinator {
     func removeChildCoordinators() {
         childCoordinators.forEach { $0.removeChildCoordinators() }
         childCoordinators.removeAll()
-    }
-}
-
-class AppCoordinator: BaseCoordinator {
-    override func start() {
-        let coordinator = AppListCoordinator(navigationController: navigationController)
-        start(coordinator: coordinator)
     }
 }

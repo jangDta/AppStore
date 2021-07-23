@@ -15,7 +15,7 @@ class AppListViewController: UIViewController {
     // MARK: - Properties
     weak var coordinator: AppListCoordinator?
     let disposeBag = DisposeBag()
-    let viewModel: AppListViewModel
+    let viewModel: AppListViewModeling
     private var searchText = PublishSubject<String>()
     
     private lazy var collectionView: UICollectionView = {
@@ -26,7 +26,7 @@ class AppListViewController: UIViewController {
     
     // MARK: - Initializer
     
-    init(viewModel: AppListViewModel) {
+    init(viewModel: AppListViewModeling) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -87,6 +87,7 @@ class AppListViewController: UIViewController {
         
         output.fetchAppDetail.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
+            print($0)
             self.coordinator?.performTransition(to: .detail(model: $0))
         }).disposed(by: disposeBag)
         

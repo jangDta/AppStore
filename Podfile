@@ -11,6 +11,7 @@ target 'AppStore' do
   pod 'Alamofire'
   pod 'RxAlamofire'
   pod 'Swinject'
+  pod 'SwinjectAutoregistration'
   pod 'ReactorKit'
 
   target 'AppStoreTests' do

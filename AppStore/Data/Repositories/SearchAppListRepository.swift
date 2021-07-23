@@ -22,12 +22,7 @@ final class SearchAppListRepository {
 
 extension SearchAppListRepository: SearchAppListRepositoryProtocol {
     func search(text: String) -> Observable<[AppModel]> {
-        cache.saveRecentSearch(text: text).subscribe(onSuccess: { result in
-            print("캐시 저장 성공")
-        },
-        onFailure: { error in
-            print(error)
-        }).disposed(by: disposeBag)
+        cache.saveRecentSearch(text: text).subscribe().disposed(by: disposeBag)
         
         return service.fetchApps(text)
             .map {

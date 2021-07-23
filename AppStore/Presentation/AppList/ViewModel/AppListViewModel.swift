@@ -9,28 +9,36 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class AppListViewModel: ViewModelType {
+class AppListViewModeling: ViewModelType {
+    typealias Input = AppListViewModelInput
+    typealias Output = AppListViewModelOutput
     
-    struct Input {
-        let title: Driver<Void>
-        let searchAppText: Driver<String>
-        let searchAppTrigger: Driver<Void>
-        let clickAppTrigger: Driver<AppViewModel>
+    func transform(input: AppListViewModelInput) -> AppListViewModelOutput {
+        fatalError()
     }
+}
     
-    struct Output {
-        let title: Driver<String>
-        let fetchAppList: Driver<[AppModel]>
-        let fetchAppDetail: Observable<AppModel>
-    }
-    
+struct AppListViewModelInput {
+    let title: Driver<Void>
+    let searchAppText: Driver<String>
+    let searchAppTrigger: Driver<Void>
+    let clickAppTrigger: Driver<AppViewModel>
+}
+
+struct AppListViewModelOutput {
+    let title: Driver<String>
+    let fetchAppList: Driver<[AppModel]>
+    let fetchAppDetail: Observable<AppModel>
+}
+
+final class AppListViewModel: AppListViewModeling {
     private let useCase: SearchAppListUseCaseProtocol
     
     init(useCase: SearchAppListUseCaseProtocol) {
         self.useCase = useCase
     }
     
-    func transform(input: Input) -> Output {
+    override func transform(input: AppListViewModelInput) -> AppListViewModelOutput {
         let title = Driver.just("AppStore")
         
         let fetchAppList = input.searchAppTrigger
