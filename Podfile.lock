@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.4.3)
+  - ReactorKit (3.0.0):
+    - RxSwift (~> 6.0)
+    - WeakMapTable (~> 1.1)
   - RxAlamofire (6.1.1):
     - RxAlamofire/Core (= 6.1.1)
   - RxAlamofire/Core (6.1.1):
@@ -11,28 +14,38 @@ PODS:
   - RxRelay (6.2.0):
     - RxSwift (= 6.2.0)
   - RxSwift (6.2.0)
+  - Swinject (2.7.1)
+  - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
   - Alamofire
+  - ReactorKit
   - RxAlamofire
   - RxCocoa
   - RxSwift
+  - Swinject
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ReactorKit
     - RxAlamofire
     - RxCocoa
     - RxRelay
     - RxSwift
+    - Swinject
+    - WeakMapTable
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  ReactorKit: 5348c9881dcb546605b451e32759dccc9937d36e
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 653614eb56b2083bccaf152697ba6fe72eeed21a
+PODFILE CHECKSUM: 21d35a658e1a7651a14793cdb3d37873d0815afe
 
 COCOAPODS: 1.8.4

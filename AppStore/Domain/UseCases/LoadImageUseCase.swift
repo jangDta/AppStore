@@ -13,9 +13,9 @@ protocol LoadImageUseCaseProtocol {
 }
 
 class LoadImageUseCase: LoadImageUseCaseProtocol {
-    private let repository: LoadImageRepository
+    private let repository: LoadImageRepositoryProtocol
     
-    init(repository: LoadImageRepository) {
+    init(repository: LoadImageRepositoryProtocol) {
         self.repository = repository
     }
     

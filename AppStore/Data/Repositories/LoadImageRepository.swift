@@ -1,5 +1,5 @@
 //
-//  LoadImageRepositoryImpl.swift
+//  LoadImageRepository.swift
 //  AppStore
 //
 //  Created by a60105114 on 2021/07/15.
@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-final class LoadImageRepositoryImpl {
+final class LoadImageRepository {
     private let service: ArtworkServiceProtocol
     
     init(service: ArtworkServiceProtocol) {
@@ -16,7 +16,7 @@ final class LoadImageRepositoryImpl {
     }
 }
 
-extension LoadImageRepositoryImpl: LoadImageRepository {
+extension LoadImageRepository: LoadImageRepositoryProtocol {
     func load(imageUrl: String) -> Observable<UIImage> {
         if let cachedImage = ImageCache.shared.object(forKey: NSString(string: imageUrl)) {
             return Observable.just(cachedImage)

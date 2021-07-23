@@ -1,5 +1,5 @@
 //
-//  RecentSearchAppListRepositoryImpl.swift
+//  RecentSearchAppListRepository.swift
 //  AppStore
 //
 //  Created by a60105114 on 2021/07/15.
@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-final class RecentSearchAppListRepositoryImpl {
+final class RecentSearchAppListRepository {
     
     private let cache: RecentSearchAppCachable
     
@@ -17,7 +17,7 @@ final class RecentSearchAppListRepositoryImpl {
     }
 }
 
-extension RecentSearchAppListRepositoryImpl: RecentSearchAppListRepository {
+extension RecentSearchAppListRepository: RecentSearchAppListRepositoryProtocol {
     func fetch(count: Int) -> Observable<[String]> {
         self.cache.fetchRecentSearch(maxCount: count)
     }

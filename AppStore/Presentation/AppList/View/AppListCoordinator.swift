@@ -14,7 +14,7 @@ final class AppListCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let vc = AppListViewController(viewModel: AppListViewModel(useCase: SearchAppListUseCase(repository: SearchAppListRepositoryImpl(service: SearchAppService(), cache: RecentSearchAppCache()))))
+        let vc = AppListViewController(viewModel: AppListViewModel(useCase: SearchAppListUseCase(repository: SearchAppListRepository(service: SearchAppService(), cache: RecentSearchAppCache()))))
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

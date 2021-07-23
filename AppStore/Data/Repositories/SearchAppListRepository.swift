@@ -1,5 +1,5 @@
 //
-//  SearchAppListRepositoryImpl.swift
+//  SearchAppListRepository.swift
 //  AppStore
 //
 //  Created by 장용범 on 2021/07/10.
@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-final class SearchAppListRepositoryImpl {
+final class SearchAppListRepository {
     
     private let service: SearchAppServiceProtocol
     private let cache: RecentSearchAppCachable
@@ -20,7 +20,7 @@ final class SearchAppListRepositoryImpl {
     }
 }
 
-extension SearchAppListRepositoryImpl: SearchAppListRepository {
+extension SearchAppListRepository: SearchAppListRepositoryProtocol {
     func search(text: String) -> Observable<[AppModel]> {
         cache.saveRecentSearch(text: text).subscribe(onSuccess: { result in
             print("캐시 저장 성공")

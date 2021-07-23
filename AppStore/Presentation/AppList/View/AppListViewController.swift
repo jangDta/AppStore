@@ -78,7 +78,7 @@ class AppListViewController: UIViewController {
         
         output.fetchAppList
             .map {
-                $0.map { AppViewModel(model: $0, useCase: LoadImageUseCase(repository: LoadImageRepositoryImpl(service: ArtworkService())))}
+                $0.map { AppViewModel(model: $0, useCase: LoadImageUseCase(repository: LoadImageRepository(service: ArtworkService())))}
             }
             .drive(self.collectionView.rx.items(cellIdentifier: "AppCollectionViewCell", cellType: AppCollectionViewCell.self)) { collectionView, viewModel, cell in
                 cell.bind(viewModel: viewModel)
@@ -91,7 +91,7 @@ class AppListViewController: UIViewController {
         }).disposed(by: disposeBag)
         
         // 최근 검색어 불러오나
-        let usecase = RecentSearchAppListUseCase(repository: RecentSearchAppListRepositoryImpl(cache: RecentSearchAppCache()))
+        let usecase = RecentSearchAppListUseCase(repository: RecentSearchAppListRepository(cache: RecentSearchAppCache()))
 
         usecase.fetch(count: 5).subscribe(onNext: { list in
             print("최근검색어: \(list)")

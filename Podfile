@@ -10,6 +10,8 @@ target 'AppStore' do
   pod 'RxCocoa'
   pod 'Alamofire'
   pod 'RxAlamofire'
+  pod 'Swinject'
+  pod 'ReactorKit'
 
   target 'AppStoreTests' do
     inherit! :search_paths

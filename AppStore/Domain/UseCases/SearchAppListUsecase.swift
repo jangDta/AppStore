@@ -13,9 +13,9 @@ protocol SearchAppListUseCaseProtocol {
 }
 
 class SearchAppListUseCase: SearchAppListUseCaseProtocol {
-    private let repository: SearchAppListRepository
+    private let repository: SearchAppListRepositoryProtocol
     
-    init(repository: SearchAppListRepository) {
+    init(repository: SearchAppListRepositoryProtocol) {
         self.repository = repository
     }
     

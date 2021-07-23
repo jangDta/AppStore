@@ -14,9 +14,9 @@ protocol RecentSearchAppListUseCaseProtocol {
 
 class RecentSearchAppListUseCase: RecentSearchAppListUseCaseProtocol {
     
-    private let repository: RecentSearchAppListRepository
+    private let repository: RecentSearchAppListRepositoryProtocol
     
-    init(repository: RecentSearchAppListRepository) {
+    init(repository: RecentSearchAppListRepositoryProtocol) {
         self.repository = repository
     }
     
