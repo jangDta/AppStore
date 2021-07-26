@@ -22,6 +22,10 @@
 		1306253226A5085300C4659C /* AppDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1306253126A5085300C4659C /* AppDetailCoordinator.swift */; };
 		1383429326AA92DA00B57559 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383429226AA92DA00B57559 /* AppCoordinator.swift */; };
 		138342BC26AAA13E00B57559 /* AppListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138342BB26AAA13E00B57559 /* AppListAssembly.swift */; };
+		138342C526AE322100B57559 /* AppListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138342C426AE322100B57559 /* AppListReactor.swift */; };
+		138342D926AE3FC600B57559 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138342D726AE3FC600B57559 /* MainTabBarViewController.swift */; };
+		138342DA26AE3FC600B57559 /* MainTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138342D826AE3FC600B57559 /* MainTabBarViewController.xib */; };
+		13BFB68926AE425600EE6D6D /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFB68826AE425600EE6D6D /* MainTabBarCoordinator.swift */; };
 		1592A5652691A1C300569D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592A5642691A1C300569D69 /* AppDelegate.swift */; };
 		1592A5672691A1C300569D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592A5662691A1C300569D69 /* SceneDelegate.swift */; };
 		1592A56E2691A1C700569D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1592A56D2691A1C700569D69 /* Assets.xcassets */; };
@@ -85,6 +89,10 @@
 		1306253126A5085300C4659C /* AppDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCoordinator.swift; sourceTree = "<group>"; };
 		1383429226AA92DA00B57559 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		138342BB26AAA13E00B57559 /* AppListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListAssembly.swift; sourceTree = "<group>"; };
+		138342C426AE322100B57559 /* AppListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListReactor.swift; sourceTree = "<group>"; };
+		138342D726AE3FC600B57559 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		138342D826AE3FC600B57559 /* MainTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarViewController.xib; sourceTree = "<group>"; };
+		13BFB68826AE425600EE6D6D /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		1592A5612691A1C300569D69 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1592A5642691A1C300569D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1592A5662691A1C300569D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +228,40 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
+		138342C326AE321000B57559 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				138342C426AE322100B57559 /* AppListReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		138342CC26AE3DC500B57559 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				138342CD26AE3DCB00B57559 /* View */,
+				138342CE26AE3DD100B57559 /* ViewModel */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		138342CD26AE3DCB00B57559 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				138342D726AE3FC600B57559 /* MainTabBarViewController.swift */,
+				138342D826AE3FC600B57559 /* MainTabBarViewController.xib */,
+				13BFB68826AE425600EE6D6D /* MainTabBarCoordinator.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		138342CE26AE3DD100B57559 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		13C7DEFC29D0F6343585EBD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +393,7 @@
 		1592A5A82691ACE700569D69 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				138342CC26AE3DC500B57559 /* Main */,
 				1306251C26A0344A00C4659C /* AppDetail */,
 				1592A5AC2691AD6500569D69 /* AppList */,
 			);
@@ -383,6 +426,7 @@
 		1592A5AC2691AD6500569D69 /* AppList */ = {
 			isa = PBXGroup;
 			children = (
+				138342C326AE321000B57559 /* Reactor */,
 				1592A5AF2691ADD000569D69 /* View */,
 				1592A5B02691ADD400569D69 /* ViewModel */,
 			);
@@ -597,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1592A5712691A1C700569D69 /* LaunchScreen.storyboard in Resources */,
+				138342DA26AE3FC600B57559 /* MainTabBarViewController.xib in Resources */,
 				1592A5D626994D2400569D69 /* AppCollectionViewCell.xib in Resources */,
 				1592A56E2691A1C700569D69 /* Assets.xcassets in Resources */,
 				1306252226A035DC00C4659C /* AppDetailViewController.xib in Resources */,
@@ -741,6 +786,7 @@
 				138342BC26AAA13E00B57559 /* AppListAssembly.swift in Sources */,
 				1592A5D22699478900569D69 /* AppViewModel.swift in Sources */,
 				1592A5C9269942E000569D69 /* Network.swift in Sources */,
+				13BFB68926AE425600EE6D6D /* MainTabBarCoordinator.swift in Sources */,
 				130624ED269FBAF200C4659C /* LoadImageRepository.swift in Sources */,
 				1306253226A5085300C4659C /* AppDetailCoordinator.swift in Sources */,
 				1592A5CB269943A000569D69 /* AppListViewModel.swift in Sources */,
@@ -748,10 +794,12 @@
 				1592A5672691A1C300569D69 /* SceneDelegate.swift in Sources */,
 				1306250E26A01E0D00C4659C /* RecentSearchAppListUseCase.swift in Sources */,
 				1592A5C6269940C200569D69 /* SearchAppListRepository.swift in Sources */,
+				138342D926AE3FC600B57559 /* MainTabBarViewController.swift in Sources */,
 				1592A5B92691B1BE00569D69 /* AppListViewController.swift in Sources */,
 				130624FE26A012DF00C4659C /* CoreDataStorage.swift in Sources */,
 				1592A5DA26995D4B00569D69 /* ImageCache.swift in Sources */,
 				1306252126A035DC00C4659C /* AppDetailViewController.swift in Sources */,
+				138342C526AE322100B57559 /* AppListReactor.swift in Sources */,
 				130624F926A012C700C4659C /* CoreDataStorage.xcdatamodeld in Sources */,
 				1592A5A12691A9DD00569D69 /* CompositionRoot.swift in Sources */,
 				1592A5D826994FF600569D69 /* SearchAppService.swift in Sources */,
