@@ -10,8 +10,12 @@ import RxSwift
 import Swinject
 
 class AppCoordinator: BaseCoordinator {
+    private var assembler: Assembler!
+    
     override func start() {
-        let coordinator = AppListCoordinator(navigationController: navigationController)
+        assembler = Assembler([AppListAssembly()], container: container)
+        
+        let coordinator = AppListCoordinator(navigationController: navigationController, container: container)
         start(coordinator: coordinator)
     }
 }

@@ -34,7 +34,7 @@ final class AppListAssembly: Assembly {
         }
         
         // ViewController
-        container.register(UIViewController.self) { r in
+        container.register(AppListViewController.self) { r in
             let viewController = AppListViewController(viewModel: r.resolve(AppListViewModeling.self)!)
             return viewController
         }

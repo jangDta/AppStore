@@ -26,6 +26,7 @@
 		138342D926AE3FC600B57559 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138342D726AE3FC600B57559 /* MainTabBarViewController.swift */; };
 		138342DA26AE3FC600B57559 /* MainTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138342D826AE3FC600B57559 /* MainTabBarViewController.xib */; };
 		13BFB68926AE425600EE6D6D /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFB68826AE425600EE6D6D /* MainTabBarCoordinator.swift */; };
+		13BFB6AC26AE539100EE6D6D /* AppDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFB6AB26AE539100EE6D6D /* AppDetailAssembly.swift */; };
 		1592A5652691A1C300569D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592A5642691A1C300569D69 /* AppDelegate.swift */; };
 		1592A5672691A1C300569D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592A5662691A1C300569D69 /* SceneDelegate.swift */; };
 		1592A56E2691A1C700569D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1592A56D2691A1C700569D69 /* Assets.xcassets */; };
@@ -93,6 +94,7 @@
 		138342D726AE3FC600B57559 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		138342D826AE3FC600B57559 /* MainTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarViewController.xib; sourceTree = "<group>"; };
 		13BFB68826AE425600EE6D6D /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		13BFB6AB26AE539100EE6D6D /* AppDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailAssembly.swift; sourceTree = "<group>"; };
 		1592A5612691A1C300569D69 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1592A5642691A1C300569D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1592A5662691A1C300569D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				138342BB26AAA13E00B57559 /* AppListAssembly.swift */,
+				13BFB6AB26AE539100EE6D6D /* AppDetailAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -782,6 +785,7 @@
 				1592A5DC26995DDA00569D69 /* ArtworkService.swift in Sources */,
 				1306250326A0171900C4659C /* RecentSearchAppCache.swift in Sources */,
 				1592A5652691A1C300569D69 /* AppDelegate.swift in Sources */,
+				13BFB6AC26AE539100EE6D6D /* AppDetailAssembly.swift in Sources */,
 				130624E7269FBAB500C4659C /* LoadImageRepositoryProtocol.swift in Sources */,
 				138342BC26AAA13E00B57559 /* AppListAssembly.swift in Sources */,
 				1592A5D22699478900569D69 /* AppViewModel.swift in Sources */,

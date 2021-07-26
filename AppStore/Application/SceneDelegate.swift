@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Swinject
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    let container = Container()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -20,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let navigationController = UINavigationController()
-        let coordinator = AppCoordinator(navigationController: navigationController)
+        let coordinator = AppCoordinator(navigationController: navigationController, container: container)
         coordinator.navigationController = navigationController
         coordinator.start()
         

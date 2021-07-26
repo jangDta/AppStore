@@ -10,6 +10,7 @@ import Swinject
 
 protocol Coordinator: AnyObject {
     var navigationController: UINavigationController { get set }
+    var container: Container { get set }
     var parentCoordinator: Coordinator? { get set }
     
     func start()
@@ -21,10 +22,13 @@ protocol Coordinator: AnyObject {
 class BaseCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
+    var container: Container
     var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController,
+         container: Container) {
         self.navigationController = navigationController
+        self.container = container
     }
     
     func start() {
