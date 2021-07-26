@@ -18,6 +18,7 @@ struct AppViewModel: ViewModelType {
         let title: Driver<String>
         let subtitle: Driver<String>
         let artworkImage: Driver<UIImage>
+        let thumbnailImages: Driver<[UIImage]>
     }
     
     let model: AppModel
@@ -42,8 +43,16 @@ struct AppViewModel: ViewModelType {
                     .asDriverOnErrorJustComplete()
             }
         
+        let thumbnailImages = Observable.from(model.screenshotUrls![0 ..< 3])
+            .concatMap {
+                return self.useCase.load(imageUrl: $0)
+            }
+            .toArray()
+            .asDriver(onErrorJustReturn: [])
+        
         return Output(title: title,
                       subtitle: subtitle,
-                      artworkImage: artworkImage)
+                      artworkImage: artworkImage,
+                      thumbnailImages: thumbnailImages)
     }
 }

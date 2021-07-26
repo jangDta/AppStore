@@ -27,6 +27,8 @@
 		138342DA26AE3FC600B57559 /* MainTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138342D826AE3FC600B57559 /* MainTabBarViewController.xib */; };
 		13BFB68926AE425600EE6D6D /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFB68826AE425600EE6D6D /* MainTabBarCoordinator.swift */; };
 		13BFB6AC26AE539100EE6D6D /* AppDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFB6AB26AE539100EE6D6D /* AppDetailAssembly.swift */; };
+		13BFB6BA26AE706C00EE6D6D /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFB6B826AE706C00EE6D6D /* ThumbnailCollectionViewCell.swift */; };
+		13BFB6BB26AE706C00EE6D6D /* ThumbnailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFB6B926AE706C00EE6D6D /* ThumbnailCollectionViewCell.xib */; };
 		1592A5652691A1C300569D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592A5642691A1C300569D69 /* AppDelegate.swift */; };
 		1592A5672691A1C300569D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592A5662691A1C300569D69 /* SceneDelegate.swift */; };
 		1592A56E2691A1C700569D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1592A56D2691A1C700569D69 /* Assets.xcassets */; };
@@ -95,6 +97,8 @@
 		138342D826AE3FC600B57559 /* MainTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarViewController.xib; sourceTree = "<group>"; };
 		13BFB68826AE425600EE6D6D /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		13BFB6AB26AE539100EE6D6D /* AppDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailAssembly.swift; sourceTree = "<group>"; };
+		13BFB6B826AE706C00EE6D6D /* ThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
+		13BFB6B926AE706C00EE6D6D /* ThumbnailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailCollectionViewCell.xib; sourceTree = "<group>"; };
 		1592A5612691A1C300569D69 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1592A5642691A1C300569D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1592A5662691A1C300569D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -443,6 +447,8 @@
 				1592A5B82691B1BE00569D69 /* AppListViewController.swift */,
 				1592A5D326994D2300569D69 /* AppCollectionViewCell.swift */,
 				1592A5D426994D2300569D69 /* AppCollectionViewCell.xib */,
+				13BFB6B826AE706C00EE6D6D /* ThumbnailCollectionViewCell.swift */,
+				13BFB6B926AE706C00EE6D6D /* ThumbnailCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -644,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1592A5712691A1C700569D69 /* LaunchScreen.storyboard in Resources */,
+				13BFB6BB26AE706C00EE6D6D /* ThumbnailCollectionViewCell.xib in Resources */,
 				138342DA26AE3FC600B57559 /* MainTabBarViewController.xib in Resources */,
 				1592A5D626994D2400569D69 /* AppCollectionViewCell.xib in Resources */,
 				1592A56E2691A1C700569D69 /* Assets.xcassets in Resources */,
@@ -810,6 +817,7 @@
 				1592A5D02699474300569D69 /* Observable+Extension.swift in Sources */,
 				1592A5D526994D2400569D69 /* AppCollectionViewCell.swift in Sources */,
 				1306252A26A035EB00C4659C /* AppDetailViewModel.swift in Sources */,
+				13BFB6BA26AE706C00EE6D6D /* ThumbnailCollectionViewCell.swift in Sources */,
 				1592A5CD2699445600569D69 /* ViewModelType.swift in Sources */,
 				1306251326A01E6700C4659C /* RecentSearchAppListRepositoryProtocol.swift in Sources */,
 				130624E1269FBA6100C4659C /* LoadImageUseCase.swift in Sources */,
