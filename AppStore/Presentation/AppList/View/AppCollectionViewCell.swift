@@ -40,7 +40,7 @@ class AppCollectionViewCell: UICollectionViewCell {
         thumbnailCollectionView.register(UINib(nibName: "ThumbnailCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ThumbnailCollectionViewCell")
         
         let flowLayout = UICollectionViewFlowLayout()
-        let width: CGFloat = 120.0
+        let width = (UIScreen.main.bounds.width - 50) / 3
         let height = thumbnailCollectionView.frame.size.height
         flowLayout.itemSize = CGSize(width: width, height: height)
         flowLayout.minimumInteritemSpacing = 0.0

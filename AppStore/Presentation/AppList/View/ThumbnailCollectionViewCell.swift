@@ -40,16 +40,3 @@ class ThumbnailCollectionViewCell: UICollectionViewCell {
     }
 
 }
-
-extension ThumbnailCollectionViewCell: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let w = collectionView.frame.size.width / 3
-        let h = collectionView.frame.size.height
-        print(w,h)
-        return CGSize(width: w, height: h)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-}

@@ -22,6 +22,10 @@ extension LoadImageRepository: LoadImageRepositoryProtocol {
             return Observable.just(cachedImage)
         } else {
             return self.service.fetchArtworkImage(imageUrl)
+                .map {
+                    ImageCache.shared.setObject($0, forKey: imageUrl as NSString)
+                    return $0
+                }
         }
     }
 }

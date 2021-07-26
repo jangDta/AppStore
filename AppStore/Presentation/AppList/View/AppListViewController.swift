@@ -87,7 +87,7 @@ class AppListViewController: UIViewController {
         
         output.fetchAppDetail.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
-            print($0)
+            print($0.trackName!)
             self.coordinator?.performTransition(to: .detail(model: $0))
         }).disposed(by: disposeBag)
         
